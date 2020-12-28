@@ -1,8 +1,8 @@
-
 import './App.css';
+import fire from './fire'
 import React from 'react'
 
-const firebase = require('firebase');
+
 class App extends React.Component {
 
   constructor(){
@@ -20,7 +20,7 @@ class App extends React.Component {
   }
 
   componentDidMount = () => {
-    firebase
+    fire
       .firestore()
       .collection('notes')
       .onSnapshot(severUpdate => {
@@ -29,6 +29,7 @@ class App extends React.Component {
           data['id'] = _doc.id;
           return data;
         });
+        console.log(notes)
         this.setState({notes: notes})
       });
   }
