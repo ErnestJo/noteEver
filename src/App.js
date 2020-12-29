@@ -1,5 +1,7 @@
 import './App.css';
 import fire from './fire'
+import SidebarComponent from './sidebar/sidebar'
+import Editorcomponent from './editor/editor';
 import React from 'react'
 
 
@@ -16,7 +18,10 @@ class App extends React.Component {
 
 
   render(){
-    return(<div>Hellow world </div>)
+    return(<div className="app-container">
+        <SidebarComponent></SidebarComponent>
+        <Editorcomponent></Editorcomponent>
+    </div>)
   }
 
   componentDidMount = () => {
